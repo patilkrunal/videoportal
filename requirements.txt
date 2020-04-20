@@ -2,9 +2,11 @@ asgiref==3.2.3
 certifi==2019.11.28
 chardet==3.0.4
 defusedxml==0.6.0
+dj-database-url==0.5.0
 Django==3.0.2
 django-allauth==0.41.0
 django-crispy-forms==1.9.0
+django-heroku==0.3.1
 freetype-py==2.1.0.post1
 gif2numpy==1.3
 gunicorn==19.6.0
@@ -18,6 +20,7 @@ oauthlib==3.1.0
 opencv-python==4.2.0.32
 PILasOPENCV==2.7
 Pillow==7.0.0
+psycopg2==2.8.5
 python3-openid==3.1.0
 pytz==2019.3
 requests==2.23.0
