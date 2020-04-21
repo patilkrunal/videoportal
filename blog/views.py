@@ -16,6 +16,7 @@ def home(request):
         'posts': Post.objects.all()
     }
     return render(request, 'blog/home.html', context)
+    # return render(request, 'blog/home.html', context)
 
 
 class PostListView(ListView):

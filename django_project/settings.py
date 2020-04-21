@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['kpdjangoblog.herokuapp.com']
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
+    'home',
     'users.apps.UsersConfig',
     'crispy_forms',
     'django.contrib.admin',
@@ -125,7 +126,7 @@ MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_REDIRECT_URL = 'blog:blog-home'
 LOGIN_URL = 'login'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -134,5 +135,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+
+#EMAIL_HOST = 'localhost'
+#EMAIL_PORT = 1025
 
 django_heroku.settings(locals())

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages         #flash message (debug/info/success/arning/error)
+from django.contrib import messages  #flash message (debug/info/success/arning/error)
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
 
@@ -12,7 +13,8 @@ def register(request):
             username = form.cleaned_data.get('username')
             # flash message
             messages.success(request, f'Account created for {username}! You are now able to log in.')
-            return redirect('login')
+            return redirect(reverse('login'))
+            # return redirect('login')
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
@@ -29,7 +31,7 @@ def profile(request):
             u_form.save()
             p_form.save()
             messages.success(request, f'Your account has been updated!')
-            return redirect('profile')
+            return redirect(reverse('profile'))
 
     else:
         u_form = UserUpdateForm(instance=request.user)
