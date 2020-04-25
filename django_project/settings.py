@@ -32,8 +32,8 @@ ALLOWED_HOSTS = ['kpdjangoblog.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'videoportal.apps.VideoportalConfig',
     'blog.apps.BlogConfig',
-    'home',
     'users.apps.UsersConfig',
     'crispy_forms',
     'django.contrib.admin',

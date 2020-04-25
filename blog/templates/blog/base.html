@@ -28,14 +28,16 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{% url 'blog:blog-home' %}">Home</a>
-              <a class="nav-item nav-link" href="{% url 'blog:blog-about' %}">About</a>
+              <a class="nav-item nav-link" href="{% url 'blog:blog-home' %}">BlogHome</a>
+              <a class="nav-item nav-link" href="{% url 'videoportal:video-home' %}">VideoHome</a>
+              <!--a class="nav-item nav-link" href="{% url 'blog:blog-about' %}">BlogAbout</a-->
             </div>
 
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
-                <a class="nav-item nav-link" href="{% url 'blog:post-create' %}">New Post</a>
+                <a class="nav-item nav-link" href="{% url 'blog:post-create' %}">New BlogPost</a>
+                <a class="nav-item nav-link" href="{% url 'videoportal:video-new' %}">New Video</a>
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
               {% else %}

@@ -1,23 +1,20 @@
-{% extends "parent.html" %}
+{% extends "videoportal/base.html" %}
 
 {% block title %}
-Home
+    Home
 {% endblock %}
 
-{% block body %}
-<h1>Welcome to Youtube Django Clone</h1><br>
-<br>
-
-{% for video in most_recent_videos %}
-<div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">{{ video.title }}</h1>
-          <p class="lead">{{ video.description }}</p>
-          <p style="font-size: 7px; color:gray;">Uploaded by {{ video.user }} on {{ video.datetime }} </p>
-          <p style="text-align: right"><a href='/video/{{ video.id }}'>Watch Video</a></p>
+{% block content %}
+    <h4>Welcome to Youtube Django Clone</h4><br>
+    {% for video in most_recent_videos %}
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4"><a href='video/{{ video.id }}'>{{ video.title }}</a></h1>
+                <p class="lead">{{ video.description }}</p>
+                <p style="font-size: 7px; color:gray;">Uploaded by {{ video.user }} on {{ video.datetime }} </p>
+                <p style="text-align: right"><a href='video/{{ video.id }}'>Watch Video</a></p>
+            </div>
         </div>
-</div>
-{% endfor %}
-
+    {% endfor %}
 
 {% endblock %}
