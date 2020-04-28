@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView
 from .models import Post
 
 
@@ -20,27 +20,6 @@ class PostListView(ListView):
 
 class PostDetailView(DetailView):
     model = Post
-
-
-class PostCreateView(CreateView):
-    model = Post
-    fields = ['title', 'content']
-
-    def form_valid(self, form):
-        return super().form_valid(form)
-
-
-class PostUpdateView(UpdateView):
-    model = Post
-    fields = ['title', 'content']
-
-    def form_valid(self, form):
-        return super().form_valid(form)
-
-
-class PostDeleteView(DeleteView):
-    model = Post
-    success_url = '/'
 
 
 def about(request):

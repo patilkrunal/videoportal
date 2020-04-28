@@ -1,15 +1,20 @@
-{% extends "blog/base.html" %}
+{% extends "videoportal/base.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
 {% block content %}
-    {% for post in posts %}
-        <article class="media content-section">
-          <div class="media-body">
-            <div class="article-metadata">
-              <h2><a class="article-title" href="{% url 'blog:post-detail' post.id %}">{{ post.title }}</a></h2>
-              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+    <h4>Welcome to Youtube Django Clone</h4><br>
+    {% for video in recent_videos %}
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4"><a href='video/{{ video.id }}'>{{ video.title }}</a></h1>
+                <p class="lead">{{ video.description }}</p>
+                <p style="font-size: 7px; color:gray;">Uploaded on {{ video.datetime }} </p>
+                <p style="text-align: right"><a href='video/{{ video.id }}'>Watch Video</a></p>
             </div>
-            <p class="article-content">{{ post.content }}</p>
-          </div>
-        </article>
+        </div>
     {% endfor %}
 
     {% if is_paginated %}
@@ -29,4 +34,4 @@
             <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
         {% endif %}
     {% endif %}
-{% endblock content %}
+{% endblock %}

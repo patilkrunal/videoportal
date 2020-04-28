@@ -1,0 +1,27 @@
+{% extends "videoportal/base.html" %}
+
+{% block title %}
+    Django Blog-Video
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="media-body">
+        <h2>{{ video.title }}</h2>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{video.video_id}}"
+                loading="eager" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+        <br>
+        <p>{{ video.description }}</p>
+        <div class="fb-like colMS" data-href="http://127.0.0.1:8000/post/{{video.id}}/" data-width=""
+             data-layout="standard" data-action="like" data-size="large" data-share="true">
+        </div>
+        <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+        <h3> Comments: </h3>
+        <div class="fb-comments" data-href="http://127.0.0.1:8000/videoportal/video/{{video.id}}"
+             data-numposts="5" data-width="">
+        </div>
+    </div>
+{% endblock %}
