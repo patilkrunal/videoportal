@@ -1,4 +1,4 @@
 git add .
-git commit -m "my changes" 
-git remote add origin https://github.com/gitkp11/DjangoApp.git
-git push -u origin master
+git commit -m "my changes"
+(if repo doesnt exists)git remote add DjangoApp https://github.com/gitkp11/DjangoApp.git
+git push -u DjangoApp master

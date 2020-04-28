@@ -1,35 +1,27 @@
 {% extends "videoportal/base.html" %}
 
 {% block title %}
-Video - 
+    Django Blog-Video
 {% endblock %}
 
 
 {% block content %}
     <h2>{{ video.title }}</h2>
 
-    <video width="480" height="360" controls>
-        <source src="{{ video.path }}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{video.video_id}}"
+            loading="eager" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+    <br>
     <p>{{ video.description }}</p>
-    <br><br>
 
-    <h3>Comments:</h3>
-    {% if form %}
-        <form action="/comment" method="POST">
-            {% csrf_token %}
-            {{ form }}
-            <input type='hidden' name='video' value='{{ video.id }}'>
-            <br>
-            <button type="submit" class="btn btn-primary">Post Comment!</button>
-        </form>
-    {% endif %}
+    <div class="fb-like" data-href="http://127.0.0.1:8000/post/{{video.id}}/" data-width=""
+         data-layout="standard" data-action="like" data-size="large" data-share="true">
+    </div>
 
-    {% for comment in comments %}
-        <p>
-            {{ comment.user }} posted on: {{ comment.datetime }} <br>
-            {{ comment.text }}
-        </p>
-    {% endfor %}
+    <h3> Comments: </h3>
+    <div class="fb-comments" data-href="http://127.0.0.1:8000/videoportal/video/{{video.id}}"
+         data-numposts="5" data-width="">
+    </div>
+
+
 {% endblock %}
