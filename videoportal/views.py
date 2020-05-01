@@ -18,7 +18,7 @@ class VideoListView(ListView):
     template_name = 'videoportal/home.html'
     context_object_name = 'recent_videos'
     ordering = ['-datetime']
-    paginate_by = 5
+    paginate_by = 16
 
 
 class VideoDetailView(View):

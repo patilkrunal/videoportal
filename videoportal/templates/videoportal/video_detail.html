@@ -1,27 +1,36 @@
-{% extends "videoportal/base.html" %}
-
-{% block title %}
-    Django Blog-Video
-{% endblock %}
+{% extends "videoportal/base.html" %} {% block title %} Django Blog-Video {% endblock %} {% block content %}
 
 
-{% block content %}
 
-    <div class="media-body">
-        <h2>{{ video.title }}</h2>
-
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{video.video_id}}"
-                loading="eager" allow="autoplay; encrypted-media" allowfullscreen>
-        </iframe>
-        <br>
-        <p>{{ video.description }}</p>
-        <div class="fb-like colMS" data-href="http://127.0.0.1:8000/post/{{video.id}}/" data-width=""
-             data-layout="standard" data-action="like" data-size="large" data-share="true">
-        </div>
-        <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
-        <h3> Comments: </h3>
-        <div class="fb-comments" data-href="http://127.0.0.1:8000/videoportal/video/{{video.id}}"
-             data-numposts="5" data-width="">
+    <div class="container mycard" >
+        <div class="media-body">
+            <div class="col-md-12">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube.com/embed/{{video.video_id}}"></iframe>
+                </div>
+                <h2>{{ video.title }}</h2>
+                <div class="fb-like" data-href="http://127.0.0.1:8000/post/{{video.id}}/" data-width="" data-layout="standard"
+                     data-action="like" data-size="large" data-share="true">
+                </div>
+            </div>
+            <br>
+            <div class="col-md-12">
+                <p>{{ video.description }}</p>
+                <h5>What is Lorem Ipsum?</h5>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                   been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                   galley of type and scrambled it to make a type specimen book. It has survived not only five
+                   centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                   It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                    passages, and more recently with desktop publishing software like Aldus PageMaker including
+                    versions of Lorem Ipsum
+                </p>
+            </div>
+            <div class="col-md-12">
+                <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+                <h3> Comments: </h3>
+                <div class="fb-comments" data-href="http://127.0.0.1:8000/videoportal/video/{{video.id}}" data-numposts="5" data-width=""></div>
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -1,0 +1,164 @@
+body {
+    background: #fafafa;
+    color: #333333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #444444;
+}
+
+ul {
+    margin: 0;
+}
+
+.bg-steel {
+    background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+    color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+}
+
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.article-title {
+    color: #444444;
+}
+
+a.article-title:hover {
+    color: #428bca;
+    text-decoration: none;
+}
+
+.article-content {
+    white-space: pre-line;
+}
+
+.article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+}
+
+.article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+}
+
+.account-heading {
+    font-size: 2.5rem;
+}
+
+img {
+    height: 150px;
+    width: 190px;
+}
+
+.jumbotron {
+    min-width: fit-content;
+    margin: 0.9rem;
+    float: left;
+    text-align: center;
+    inline-size: auto;
+    border-radius: 1rem;
+}
+
+.list-group-item {
+    background-color: #cbd5db;
+}
+
+.pb-3,
+.py-3 {
+    padding-bottom: 0rem;
+}
+
+.card-title {
+    margin-bottom: 0rem;
+}
+
+.card-img-thumbnail {
+    border-radius: 1rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.list-group-item-light {
+    background-color: unset;
+}
+
+.form-inline {
+    max-inline-size: fit-content;
+}
+
+.form-control {
+    width: unset;
+}
+
+.navbar {
+    position: absolute;
+}
+
+.imgthumbnail {
+    inline-size: -webkit-fill-available;
+    contain: size;
+    height: 312px;
+    border-radius: 2.5rem;
+}
+
+.blog-image {
+    min-inline-size: -webkit-fill-available;
+    height: auto;
+    border-radius: 5rem;
+}
+
+.rounded {
+    border-radius: 2.25rem!important;
+}
+
+.about-card {
+    float: left;
+    font-family: monospace;
+}
+
+.mbr-section-btn {
+    text-align: center;
+}
