@@ -2,3 +2,23 @@ git add .
 git commit -m "my changes"
 (if repo doesnt exists)git remote add videoportal https://github.com/gitkp11/DjangoApp.git
 git push -u videoportal master
+
+
+heroku login
+This will ask you to enter email id and password
+heroku create
+This will create an application in Heroku which you can see on Heroku Dashboard
+git add .
+Add all the files
+git commit -m “App ready to deploy”
+Commit the code
+git push heroku master
+This will push the entire app on Heroku Server
+heroku config:set PORT=8080
+This will set the Port
+heroku ps:scale web=1
+This is to ensure that at least one instance of an app is running
+heroku open
+Visit the app through generated URL or with the above command
+heroku logs
+This is to check the logs, if anything goes wrong
