@@ -7,7 +7,8 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
-    blog_logo = models.FileField()
+    blog_logo = models.FileField(upload_to='Posts/Thumbnails/')
+    resume = models.FileField(upload_to='Posts/resumes/', null=True, blank=True)
 
     def __str__(self):
         return self.title
