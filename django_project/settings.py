@@ -1,7 +1,11 @@
 import os
 import django_heroku
+import dj_database_url
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from django.contrib.messages import constants as messages
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -15,13 +19,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['kpvideoportal.herokuapp.com']
 
-
 # Application definition
 
 INSTALLED_APPS = [
-    'videoportal.apps.VideoportalConfig',
+    # user built apps
+    'home.apps.HomeConfig',
     'blog.apps.BlogConfig',
+    'videoportal.apps.VideoportalConfig',
     'crispy_forms',
+
+    # inbuilt apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,7 +55,6 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ['templates'],
-        # 'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,7 +122,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -126,6 +131,9 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
 django_heroku.settings(locals())
 
-import dj_database_url
-prod_db  =  dj_database_url.config(conn_max_age=500)
+prod_db = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}

@@ -17,18 +17,22 @@ ul {
 }
 
 .bg-steel {
-    background-color: #5f788a;
+    background-color: black;
 }
 
-.site-header .navbar-nav .nav-link {
+.navbar-nav .nav-link {
     color: #cbd5db;
+    height: 2rem;
+    align-self: center;
+    padding-bottom: 0px;
+    padding-top: 4px;
 }
 
-.site-header .navbar-nav .nav-link:hover {
+.navbar-nav .nav-link:hover {
     color: #ffffff;
 }
 
-.site-header .navbar-nav .nav-link.active {
+.navbar-nav .nav-link.active {
     font-weight: 500;
 }
 
@@ -86,14 +90,8 @@ a.article-title:hover {
     font-size: 2.5rem;
 }
 
-img {
-    height: 150px;
-    width: 190px;
-}
-
 .jumbotron {
     min-width: fit-content;
-    margin: 0.9rem;
     float: left;
     text-align: center;
     inline-size: auto;
@@ -115,6 +113,9 @@ img {
 
 .card-img-thumbnail {
     border-radius: 1rem;
+    inline-size: -webkit-fill-available;
+    contain: size;
+    height: 14rem;
 }
 
 ul {
@@ -130,11 +131,7 @@ ul {
 }
 
 .form-control {
-    width: unset;
-}
-
-.navbar {
-    position: absolute;
+    height: 2rem;
 }
 
 .imgthumbnail {
@@ -161,4 +158,38 @@ ul {
 
 .mbr-section-btn {
     text-align: center;
+}
+
+.form-inline .btn {
+    height: 2rem;
+}
+
+.dropdown-menu .dropdown-item {
+    background-color: red;
+    font-weight: bold;
+    color: white;
+    text-align:center;
+    border-radius: 50px;
+}
+
+.dropdown-menu {
+    background-color: transparent;
+    border: none;
+}
+
+.card {
+    flex-direction: unset;
+    min-width: 0;
+}
+
+.row {
+    width: 100%;
+}
+
+.col .seperatecard {
+    width: unset;
+}
+
+.col {
+    width: unset;
 }

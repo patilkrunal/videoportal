@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %} Video Description {% endblock %}
+
+{% block content %}s
+	<div class="col-12 p-3 ">
+    <div class="media-container-row">
+      <div class="row">
+        <div class="col-1 p-3 "></div>
+        <div class="col-8    p-3">
+
+	        <h4 class="video-title">{{ video.title }}</h4>
+          <small>{{ video.subtitle1 }} | {{ video.subtitle2 }}</small>
+
+            <div class="col-md-12">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube
+                .com/embed/{{video.video_id}}" ></iframe>
+              </div>
+              <div class="fb-like" data-href="http://127.0.0.1:8000/post/{{video.id}}/" data-width="" data-layout="standard"
+                 data-action="like" data-size="large" data-share="true">
+              </div>
+            </div>
+            <br>
+
+	          <div class="col-md-12">
+              <p>{{ video.description }}</p>
+              <h5>What is Lorem Ipsum?</h5>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                 been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                 galley of type and scrambled it to make a type specimen book. It has survived not only five
+                 centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                 It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software like Aldus PageMaker including
+                  versions of Lorem Ipsum
+              </p>
+            </div>
+            <div class="col-md-12">
+              <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+              <h3> Comments: </h3>
+              <div class="fb-comments" data-href="http://127.0.0.1:8000/videoportal/video/{{video.id}}" data-numposts="5" data-width=""></div>
+		    </div>
+        </div>
+        <div class="col-3 col-xl-3 p-3 ">
+			<div class="content-section ">
+				<h3>Our Sidebar</h3>
+				<p class='text-muted'>You can put any information here you'd like.
+					<ul class="list-group ">
+						<li class="list-group-item list-group-item-light ">Latest Posts</li>
+						<li class="list-group-item list-group-item-light ">Announcements</li>
+						<li class="list-group-item list-group-item-light ">Calendars</li>
+						<li class="list-group-item list-group-item-light ">etc</li>
+					</ul>
+				</p>
+				</div>
+			</div>
+        </div>
+    </div>
+	</div>
+{% endblock %}

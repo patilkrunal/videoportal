@@ -25,7 +25,7 @@ class VideoDetailView(View):
     template_name = 'videoportal/video_detail.html'
 
     def get(self, request, id):
-        print('VideoDetailView enter')
+        # print('VideoDetailView enter')
         video_by_id = Video.objects.get(id=id)  # fetch video from DB by ID
         BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         video_by_id.path = 'http://127.0.0.1:8000/get_video/' + video_by_id.path
@@ -33,16 +33,16 @@ class VideoDetailView(View):
 
         # print('https://www.youtube.com/embed/' + video_by_id.video_id)
         # print('http://127.0.0.1:8000/post/' + str(video_by_id.id))
-        print('VideoDetailView-get leave')
+        # print('VideoDetailView-get leave')
         return render(request, self.template_name, context)
 
 
 class VideoFileView(View):
     def get(self, request, file_name):
-        print('VideoFileView enter')
+        # print('VideoFileView enter')
         BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         file = FileWrapper(open(BASE_DIR + '/' + file_name, 'rb'))
         response = HttpResponse(file, content_type='video/mp4')
         response['Content-Disposition'] = 'attachment; filename={}'.format(file_name)
-        print('VideoFileView-get leave')
+        # print('VideoFileView-get leave')
         return response

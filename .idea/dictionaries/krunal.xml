@@ -1,10 +1,19 @@
 <component name="ProjectDictionaryState">
   <dictionary name="krunal">
     <words>
+      <w>aboutactive</w>
+      <w>contactactive</w>
+      <w>endblock</w>
       <w>homeview</w>
+      <w>imgthumbnail</w>
+      <w>loginpassword</w>
+      <w>loginusername</w>
+      <w>myuser</w>
       <w>navbar</w>
+      <w>portalactive</w>
       <w>toggler</w>
       <w>videoportal</w>
+      <w>videoportalactive</w>
       <w>viewtype</w>
     </words>
   </dictionary>
