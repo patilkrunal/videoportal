@@ -10,6 +10,8 @@ from videoportal.models import Video
 def home(request):
     context = {
         'recent_post': Post.objects.all()[0],
+        # 'recent_post': Post.objects.order_by('bakery__id', '-baked_at').distinct('bakery__id')
+        # 'recent_post': Post.objects.filter(date_posted="date_posted").order_by("-created_at")[:1],
         'recent_video': Video.objects.all()[0]
     }
     return render(request, 'home/home.html', context)

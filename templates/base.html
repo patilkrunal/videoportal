@@ -22,10 +22,10 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top py-1" style="background-color: currentcolor;">
+  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top py-1">
     <div class="container-fluid">
-      <div class="col-1 p-3 "></div>
-      <div class="col-11">
+      <div class="col-md-1 p-3 hide_in_mobile "></div>
+      <div class="col-md-8">
         <div class="row">
 	        <a class="navbar-brand mr-4" href="{% url 'home:home' %}">Django App</a>
           <div class="collapse navbar-collapse" id="navbarToggle">
@@ -43,11 +43,11 @@
                 <a class="nav-link" href="{% url 'home:contact' %}">Contact</a>
               </li>
             </div>
-            <div class="form-inline">
-              <form method="get" action="{% url 'home:search' %}" class="mx-3">
+            <div class="form-inline py-2  ">
+              <form method="get" action="{% url 'home:search' %}" class="mr-4" style="display: flex;">
               <input class="form-control mr-sm-2 SearchBar" type="search " placeholder="Search"
-                       aria-label="Search" name="query" id="query">
-                <button class="btn btn-outline-success" type="submit " style="height: 2rem;vertical-align: middle;">Search</button>
+                       aria-label="Search" name="query" id="query" style="height: 2rem;">
+                <button class="btn btn-sm btn-outline-success" type="submit ">Search</button>
               </form>
             </div>
 
@@ -66,29 +66,29 @@
 				      </ul>
 				    {% else %}
 				      <!-- Button to trigger Login modal -->
-				      <button type="button" class="btn btn-success mr-2" data-toggle="modal" data-target="#loginModal"
+				      <button type="button" class="btn btn-sm btn-success mr-2" data-toggle="modal" data-target="#loginModal"
 				        style="height: 2rem;vertical-align: middle;">
 				        Login
 				      </button>
 				      <!-- Button to trigger SignUp modal -->
-				      <button type="button" class="btn btn-success mr-2" data-toggle="modal" data-target="#signupModal"
+				      <button type="button" class="btn btn-sm btn-success mr-2" data-toggle="modal" data-target="#signupModal"
 				        style="height: 2rem;vertical-align: middle;">
 				        SignUp
 				      </button>
 				    {% endif %}
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
-                  aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                  aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation" style="margin-left: auto;">
             <span class="navbar-toggler-icon"></span>
           </button>
       </div>
       </div>
-      <div class="col-3 p-3 "></div>
+      <div class="col-md-3 p-3 hide_in_mobile"></div>
     </div>
   </nav>
 
-  <div class="container-fluid ">
-      <div class="row mt-5 pt-4 px-2 ">
+  <div class="container-fluid mt-5">
+      <div class="row">
           <div class="col-12 ">
               {% if messages %}
                 {% for message in messages %}
