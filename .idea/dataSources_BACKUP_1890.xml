@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="db" uuid="cf8feaa4-238f-4fa2-b5a1-dac47d9148a7">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\krunal\Desktop\django_project\db.sqlite3</jdbc-url>
+    </data-source>
+<<<<<<< HEAD
+    <data-source source="LOCAL" name="db [2]" uuid="091c65e8-3eac-491f-bc3a-0142deef06c8">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\krunal\Desktop\videoportal-master\db.sqlite3</jdbc-url>
+    </data-source>
+=======
+>>>>>>> 88aabc483845a20d7508571d6023fecb0e1a3c4d
+  </component>
+</project>
